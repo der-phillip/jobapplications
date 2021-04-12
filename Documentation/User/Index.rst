@@ -240,7 +240,7 @@ This function does not trigger when in development environment, if you want it t
 There is quite a bit of configuration to do though:
 
 #. Enable Google Jobs in the Extension see ("Enable Google Jobs") below.
-#. `Create a Servive Account <https://developers.google.com/search/apis/indexing-api/v3/prereqs>`__ and download the *.json* configuration file including the private key and other data.
+#. `Create a Service Account <https://developers.google.com/search/apis/indexing-api/v3/prereqs>`__ and download the *.json* configuration file including the private key and other data.
 	It should look somewhat like that:
 
 	::
