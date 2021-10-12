@@ -31,7 +31,9 @@
 		public function getApplicantFolder(\ITX\Jobapplications\Domain\Model\Application $applicationObject): string
 		{
 			return self::APP_FILE_FOLDER.(new \TYPO3\CMS\Core\Resource\Driver\LocalDriver)
-					->sanitizeFileName($applicationObject->getFirstName()."_".$applicationObject->getLastName()
+					->sanitizeFileName(
+					    $this->normalizeNameStrings($applicationObject->getFirstName())."_".
+                        $this->normalizeNameStrings($applicationObject->getLastName())
 									   ."_".hash("md5", $applicationObject->getFirstName()."|"
 													  .$applicationObject->getLastName()
 													  .$applicationObject->getUid()));
@@ -69,4 +71,13 @@
 				}
 			}
 		}
+
+        /**
+         * @param string $str
+         * @return string
+         */
+		private function normalizeNameStrings(string $str):string
+        {
+            return iconv("utf-8","ascii//TRANSLIT",$str);
+        }
 	}

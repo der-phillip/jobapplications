@@ -599,8 +599,8 @@
 			$return_files = [];
 			foreach ($fileIds as $fileId)
 			{
+				if (is_array($fileId) && $fileId['size'] === 0) continue;
 				if (empty($fileId))
-				{
 					break;
 				}
 

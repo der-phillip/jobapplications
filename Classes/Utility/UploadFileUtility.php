@@ -171,4 +171,13 @@
 
 			return GeneralUtility::rmdir($folderPath, true);
 		}
+
+        /**
+         * @param string $str
+         * @return string
+         */
+        private function normalizeFilenameStrings(string $str):string
+        {
+            return iconv("utf-8","ascii//TRANSLIT",$str);
+        }
 	}

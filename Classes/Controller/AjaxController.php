@@ -44,7 +44,7 @@
 		 */
 		public function __construct()
 		{
-			$this->fileTempPath = Environment::getVarPath().DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR.'jobapplications'.DIRECTORY_SEPARATOR;
+            $this->fileTempPath = Environment::getVarPath().DIRECTORY_SEPARATOR.'cache'.DIRECTORY_SEPARATOR.'data'.DIRECTORY_SEPARATOR.'jobapplications'.DIRECTORY_SEPARATOR;
 		}
 
 		/**
